@@ -1,0 +1,19 @@
+boot to reprogram EEPROM in-system using serial port
+
+"manual":
+
+exchange runs at 9600 baud (6 MHz quartz=2.5us cycle), 8-N-2 (TWO STOP BITS!!!)
+
+1. after reset, if P24=0, go to boot (copy it to RAM, run)
+2. boot prints "boot48\n"
+3. commands:
+   'j' - run main program (from 0x100), interrupts mapped to 0x103, 0x107.
+         echoes 'j' back then goes.
+
+   'wHHLLDD' - write to flash at HHLL address, DD - data.
+               no write if (addr&0xFFF)<0x100 or >=0x800, goes to step 2.
+               Otherwise (write ok) gives 'ok\n' and then step 3.
+   'rHHLL' - returns data from given address (0x000..0xFFF), then '\n', then step 2.
+
+all addresses and data is in HEX (big letters)
+

@@ -1,0 +1,4 @@
+host programmer for 8048 board.
+
+written in python, uses pyserial package.
+

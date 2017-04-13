@@ -1,0 +1,3 @@
+simple 8048 simulator,
+simulates CPU and uart (softwared of course) from stdin/stdout
+
