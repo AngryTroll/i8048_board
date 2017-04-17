@@ -20,6 +20,8 @@ Features:
  - T0, T1, /INT signals of CPU available at the connectors
  
  - 2K code flash, 256 bytes of movx-RAM. Flash is both hardware and software write-protected
+
+ - usage of 27(c)16 is also possible
  
  - boot code that allows in-system programmability via cheap USB-to-serial converter (/src/boot)
  
@@ -41,7 +43,7 @@ Features:
 
  - host programmer software, written in python (/src/host_pgm)
 
- - Easy shield board developing, prototype boards of different sizes (specifically, 7x9 cm and 8x12 cm could be used).
+ - Easy shield board developing, prototype boards of different sizes (specifically, 7x9 cm and 8x12 cm) could be used.
 
  - retro application areas:
    * calculator (with additional shield board)
@@ -57,5 +59,5 @@ Errata:
  - lousy reset circuit that is unable to generate reset at short power outages.
    This connected with the inherent ability of 8035 chips to continue write accesses
    during reset assertions, could easily lead to boot area EEPROM corruption.
- Workaround: deliberately use RO/RW jumper, only setting RW for programming operations.
+ Workaround: deliberately use RO/RW jumper, set RW only during programming operations.
 
